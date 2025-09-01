@@ -1,0 +1,28 @@
+# Transformer模型配置
+
+model:
+  model_dim: 128
+  num_heads: 8
+  num_layers: 6
+  seq_length: 12
+  pred_length: 6
+  dropout: 0.1
+
+data:
+  train_ratio: 0.7
+  val_ratio: 0.15
+  scaler_type: "standard"  # "standard" or "minmax"
+
+training:
+  batch_size: 64
+  num_epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  early_stopping: true
+  early_stopping_patience: 20
+  checkpoint_dir: "checkpoints/transformer"
+  experiment_name: "transformer_experiment"
+
+device:
+  use_cuda: true
+  gpu_id: 0
